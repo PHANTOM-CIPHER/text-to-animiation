@@ -1,0 +1,928 @@
+ffmpeg started on 2023-12-09 at 03:05:27
+Report written to "ffmpeg-20231209-030527.log"
+Log level: 48
+Command line:
+ffmpeg -report -framerate 30 -i "output3/morphed_image_%04d.png" -i output3/merged_audio.mp3 -i output3/subtitles.srt -map 0:v -c:v libx265 -preset slow -crf 25 -map 1:a -c:a copy -metadata:s:a:0 "language=eng" -map 2:s -c:s mov_text -metadata:s:s:0 "language=eng" -disposition:s:s:0 default+forced -y output3/video_audio_srt.mp4
+ffmpeg version 2023-08-30-git-7aa71ab5c0-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-dxva2 --enable-d3d11va --enable-lib  libavutil      58. 17.100 / 58. 17.100
+  libavcodec     60. 23.100 / 60. 23.100
+  libavformat    60. 10.101 / 60. 10.101
+  libavdevice    60.  2.101 / 60.  2.101
+  libavfilter     9. 11.100 /  9. 11.100
+  libswscale      7.  3.100 /  7.  3.100
+  libswresample   4. 11.100 /  4. 11.100
+  libpostproc    57.  2.100 / 57.  2.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-framerate' ... matched as AVOption 'framerate' with argument '30'.
+Reading option '-i' ... matched as output url with argument 'output3/morphed_image_%04d.png'.
+Reading option '-i' ... matched as output url with argument 'output3/merged_audio.mp3'.
+Reading option '-i' ... matched as output url with argument 'output3/subtitles.srt'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '0:v'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx265'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'slow'.
+Reading option '-crf' ... matched as AVOption 'crf' with argument '25'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '1:a'.
+Reading option '-c:a' ... matched as option 'c' (codec name) with argument 'copy'.
+Reading option '-metadata:s:a:0' ... matched as option 'metadata' (add metadata) with argument 'language=eng'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '2:s'.
+Reading option '-c:s' ... matched as option 'c' (codec name) with argument 'mov_text'.
+Reading option '-metadata:s:s:0' ... matched as option 'metadata' (add metadata) with argument 'language=eng'.
+Reading option '-disposition:s:s:0' ... matched as option 'disposition' (disposition) with argument 'default+forced'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option 'output3/video_audio_srt.mp4' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url output3/morphed_image_%04d.png.
+Successfully parsed a group of options.
+Opening an input file: output3/morphed_image_%04d.png.
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0000.png' for reading
+[file @ 000001d83f8d6340] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8de440] Statistics: 1502622 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0001.png' for reading
+[file @ 000001d83f8deec0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8de740] Statistics: 1502788 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0002.png' for reading
+[file @ 000001d83f8de740] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8efe40] Statistics: 1500740 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0003.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8f0000] Statistics: 1501805 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Probe buffer size limit of 5000000 bytes reached
+Input #0, image2, from 'output3/morphed_image_%04d.png':
+  Duration: 00:00:08.03, start: 0.000000, bitrate: N/A
+  Stream #0:0, 4, 1/30: Video: png, rgb24(pc, gbr/unknown/unknown), 1024x1024, 30 fps, 30 tbr, 30 tbn
+Successfully opened the file.
+Parsing a group of options: input url output3/merged_audio.mp3.
+Successfully parsed a group of options.
+Opening an input file: output3/merged_audio.mp3.
+[AVFormatContext @ 000001d83f8f0840] Opening 'output3/merged_audio.mp3' for reading
+[file @ 000001d83f8f0bc0] Setting default whitelist 'file,crypto,data'
+[mp3 @ 000001d83f8f0840] Format mp3 probed with size=2048 and score=51
+id3v2 ver:4 flags:00 len:35
+[mp3 @ 000001d83f8f0840] pad 576 576
+[mp3 @ 000001d83f8f0840] Skipping 0 bytes of junk at 237.
+[mp3 @ 000001d83f8f0840] Before avformat_find_stream_info() pos: 237 bytes read:32768 seeks:0 nb_streams:1
+[mp3 @ 000001d83f8f0840] demuxer injecting skip 1105 / discard 0
+[mp3float @ 000001d83f8e7480] skip 1105 / discard 0 samples due to side data
+[mp3float @ 000001d83f8e7480] skip whole frame, skip left: 529
+[mp3 @ 000001d83f8f0840] All info found
+[mp3 @ 000001d83f8f0840] After avformat_find_stream_info() pos: 5357 bytes read:32768 seeks:0 frames:50
+Input #1, mp3, from 'output3/merged_audio.mp3':
+  Metadata:
+    encoder         : Lavf60.10.101
+  Duration: 00:00:15.62, start: 0.046042, bitrate: 32 kb/s
+  Stream #1:0, 50, 1/14112000: Audio: mp3, 24000 Hz, mono, fltp, 32 kb/s
+Successfully opened the file.
+Parsing a group of options: input url output3/subtitles.srt.
+Successfully parsed a group of options.
+Opening an input file: output3/subtitles.srt.
+[AVFormatContext @ 000001d83f8db640] Opening 'output3/subtitles.srt' for reading
+[file @ 000001d83f8f0d40] Setting default whitelist 'file,crypto,data'
+[srt @ 000001d83f8db640] Format srt probed with size=2048 and score=100
+[srt @ 000001d83f8db640] Before avformat_find_stream_info() pos: 276 bytes read:276 seeks:0 nb_streams:1
+[srt @ 000001d83f8db640] All info found
+[srt @ 000001d83f8db640] After avformat_find_stream_info() pos: 276 bytes read:276 seeks:0 frames:0
+Input #2, srt, from 'output3/subtitles.srt':
+  Duration: N/A, bitrate: N/A
+  Stream #2:0, 0, 1/1000: Subtitle: subrip
+Successfully opened the file.
+Parsing a group of options: output url output3/video_audio_srt.mp4.
+Applying option map (set input stream mapping) with argument 0:v.
+Applying option c:v (codec name) with argument libx265.
+Applying option map (set input stream mapping) with argument 1:a.
+Applying option c:a (codec name) with argument copy.
+Applying option metadata:s:a:0 (add metadata) with argument language=eng.
+Applying option map (set input stream mapping) with argument 2:s.
+Applying option c:s (codec name) with argument mov_text.
+Applying option metadata:s:s:0 (add metadata) with argument language=eng.
+Applying option disposition:s:s:0 (disposition) with argument default+forced.
+Successfully parsed a group of options.
+Opening an output file: output3/video_audio_srt.mp4.
+[out#0/mp4 @ 000001d83f906b40] Adding streams from explicit maps...
+[vost#0:0/libx265 @ 000001d83f907940] Created video stream from input stream 0:0
+detected 8 logical cores
+[aost#0:1/copy @ 000001d83f92b080] Created audio stream from input stream 1:0
+[sost#0:2/mov_text @ 000001d83f91f780] Created subtitle stream from input stream 2:0
+[file @ 000001d83f931f00] Setting default whitelist 'file,crypto,data'
+Successfully opened the file.
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> hevc (libx265))
+  Stream #1:0 -> #0:1 (copy)
+  Stream #2:0 -> #0:2 (subrip (srt) -> mov_text (native))
+Press [q] to stop, [?] for help
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0004.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1500800 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0005.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1500111 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0006.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1499374 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0007.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1498666 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0008.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1498194 bytes read, 0 seeks
+[in#0/image2 @ 000001d83f8cf200] Thread message queue blocking; consider raising the thread_queue_size option (current value: 8)
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0009.png' for reading
+[file @ 000001d83f8efe40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1497328 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0010.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1496539 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0011.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1496604 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0012.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1496194 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0013.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1495623 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0014.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1495566 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0015.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1496271 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0016.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1495421 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0017.png' for reading
+[file @ 000001d83f8efdc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d83f8b92c0] Statistics: 1494867 bytes read, 0 seeks
+[graph 0 input from stream 0:0 @ 000001d83f930f00] Setting 'video_size' to value '1024x1024'
+[graph 0 input from stream 0:0 @ 000001d83f930f00] Setting 'pix_fmt' to value '2'
+[graph 0 input from stream 0:0 @ 000001d83f930f00] Setting 'time_base' to value '1/30'
+[graph 0 input from stream 0:0 @ 000001d83f930f00] Setting 'pixel_aspect' to value '0/1'
+[graph 0 input from stream 0:0 @ 000001d83f930f00] Setting 'frame_rate' to value '30/1'
+[graph 0 input from stream 0:0 @ 000001d83f930f00] w:1024 h:1024 pixfmt:rgb24 tb:1/30 fr:30/1 sar:0/1
+[format @ 000001d83f930700] Setting 'pix_fmts' to value 'yuv420p|yuvj420p|yuv422p|yuvj422p|yuv444p|yuvj444p|gbrp|yuv420p10le|yuv422p10le|yuv444p10le|gbrp10le|yuv420p12le|yuv422p12le|yuv444p12le|gbrp12le|gray|gray10le|gray12le'
+[auto_scale_0 @ 000001d83f92f400] w:iw h:ih flags:'' interl:0
+[format @ 000001d83f930700] auto-inserting filter 'auto_scale_0' between the filter 'Parsed_null_0' and the filter 'format'
+[AVFilterGraph @ 000001d83f8efdc0] query_formats: 4 queried, 2 merged, 1 already done, 0 delayed
+[auto_scale_0 @ 000001d83f92f400] picking gbrp out of 18 ref:rgb24 alpha:0
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840fe8580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840ff6e80] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d8410057c0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841014100] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841022a00] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841031340] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84103fc40] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84104e580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84105ce80] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scale_0 @ 000001d83f92f400] w:1024 h:1024 fmt:rgb24 sar:0/1 -> w:1024 h:1024 fmt:gbrp sar:0/1 flags:0x00000004
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840fe9580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840ff7ec0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d8410067c0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841015100] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841023a00] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841032340] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841040c40] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84104f580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84105de80] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scale_0 @ 000001d83f92f400] w:1024 h:1024 fmt:rgb24 sar:0/1 -> w:1024 h:1024 fmt:gbrp sar:0/1 flags:0x00000004
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840fe9580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840ff7ec0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d8410067c0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841015100] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841023a00] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841032340] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841040c40] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84104f580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84105de80] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scale_0 @ 000001d83f92f400] w:1024 h:1024 fmt:rgb24 sar:0/1 -> w:1024 h:1024 fmt:gbrp sar:0/1 flags:0x00000004
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840fe9580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d840ff7ec0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d8410067c0] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841015100] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841023a00] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841032340] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d841040c40] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84104f580] Forcing full internal H chroma due to input having non subsampled chroma
+[swscaler @ 000001d840fd5400] [swscaler @ 000001d84105de80] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scale_0 @ 000001d83f92f400] w:1024 h:1024 fmt:rgb24 sar:0/1 -> w:1024 h:1024 fmt:gbrp sar:0/1 flags:0x00000004
+Output #0, mp4, to 'output3/video_audio_srt.mp4':
+  Metadata:
+    encoder         : Lavf60.10.101
+  Stream #0:0, 0, 1/15360: Video: hevc (hev1 / 0x31766568), gbrp(pc, gbr/unknown/unknown, progressive), 1024x1024, q=2-31, 30 fps, 15360 tbn
+    Metadata:
+      encoder         : Lavc60.23.100 libx265
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+  Stream #0:1(eng), 0, 1/24000: Audio: mp3 (mp4a / 0x6134706D), 24000 Hz, mono, fltp, 32 kb/s
+  Stream #0:2(eng), 0, 1/1000000: Subtitle: mov_text (tx3g / 0x67337874) (default) (forced)
+    Metadata:
+      encoder         : Lavc60.23.100 mov_text
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    [in#2/srt @ 000001d83f8e7d40] EOF while reading input
+[in#2/srt @ 000001d83f8e7d40] Terminating demuxer thread
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0018.png' for reading
+[file @ 000001d844e336c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1494478 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0019.png' for reading
+[file @ 000001d844e32ec0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1494882 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0020.png' for reading
+[file @ 000001d844e33100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1495114 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0021.png' for reading
+[file @ 000001d844e33bc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1494606 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0022.png' for reading
+[file @ 000001d844e33540] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1494580 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0023.png' for reading
+[file @ 000001d844e32dc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1494347 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0024.png' for reading
+[file @ 000001d844e33bc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1494528 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0025.png' for reading
+[file @ 000001d844e33100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1494083 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0026.png' for reading
+[file @ 000001d844e33bc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1493991 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0027.png' for reading
+[file @ 000001d844e32f80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1494297 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0028.png' for reading
+[file @ 000001d844e33bc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1493687 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0029.png' for reading
+[file @ 000001d844e32dc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1493808 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0030.png' for reading
+[file @ 000001d844e32ec0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1495305 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0031.png' for reading
+[file @ 000001d844e33380] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1493781 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0032.png' for reading
+[file @ 000001d844e32ec0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1494129 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0033.png' for reading
+[file @ 000001d844e33040] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1494102 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0034.png' for reading
+[file @ 000001d844e332c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1493960 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0035.png' for reading
+[file @ 000001d844e33100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1494636 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0036.png' for reading
+[file @ 000001d844e33100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1494917 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0037.png' for reading
+[file @ 000001d844cf2680] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1495114 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0038.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1495516 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0039.png' for reading
+[file @ 000001d844cf2440] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1495261 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0040.png' for reading
+[file @ 000001d844cf1240] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1494987 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0041.png' for reading
+[file @ 000001d844cf21c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1495666 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0042.png' for reading
+[file @ 000001d844cf2440] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1496157 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0043.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1496808 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0044.png' for reading
+[file @ 000001d844cf2e00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1497282 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0045.png' for reading
+[file @ 000001d844cf2ec0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1497098 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0046.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1497751 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0047.png' for reading
+[file @ 000001d844cf2e00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1498396 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0048.png' for reading
+[file @ 000001d844cf2340] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1498894 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0049.png' for reading
+[file @ 000001d844cf2e00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1499325 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0050.png' for reading
+[file @ 000001d844cf2840] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1500190 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0051.png' for reading
+[file @ 000001d844cf21c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1500959 bytes read, 0 seeks
+frame=    1 fps=0.0 q=26.0 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=10.4x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0052.png' for reading
+[file @ 000001d844cf1240] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1501674 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0053.png' for reading
+[file @ 000001d844cf14c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1502340 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0054.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1503520 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0055.png' for reading
+[file @ 000001d844cf1640] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1503727 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0056.png' for reading
+[file @ 000001d844cf1640] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1504652 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0057.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1504785 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0058.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1505063 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0059.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1506168 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0060.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1507598 bytes read, 0 seeks
+frame=    9 fps=6.2 q=26.0 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=6.19x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0061.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1507642 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0062.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1509062 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0063.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1510074 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0064.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1510663 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0065.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1511915 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0066.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1512494 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0067.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1513270 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0068.png' for reading
+[file @ 000001d844cf1c00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1514413 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0069.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1515050 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0070.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1516563 bytes read, 0 seeks
+frame=   20 fps=9.6 q=26.3 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=4.32x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0071.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1517682 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0072.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1518103 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0073.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1519239 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0074.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1520510 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0075.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1521189 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0076.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1522160 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0077.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1523125 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0078.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1524042 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0079.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1524920 bytes read, 0 seeks
+frame=   29 fps= 11 q=32.7 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=3.48x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0080.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1525577 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0081.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1526629 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0082.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1528176 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0083.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1529393 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0084.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1530513 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0085.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1532255 bytes read, 0 seeks
+frame=   35 fps= 11 q=26.1 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=2.89x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0086.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1533554 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0087.png' for reading
+[file @ 000001d844cf1b40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1534394 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0088.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1535854 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0089.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1536585 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0090.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1537575 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0091.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1538978 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0092.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1540361 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0093.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1541379 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0094.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1542607 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0095.png' for reading
+[file @ 000001d844cf1f40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1544002 bytes read, 0 seeks
+frame=   45 fps= 12 q=25.8 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=2.36x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0096.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1544438 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0097.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1545578 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0098.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1546914 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0099.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1547839 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0100.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1549433 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0101.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1550536 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0102.png' for reading
+[file @ 000001d844cf1c00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1551715 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0103.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1552780 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0104.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1554164 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0105.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1554786 bytes read, 0 seeks
+frame=   55 fps= 12 q=25.7 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=1.99x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0106.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1556480 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0107.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1557274 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0108.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1558563 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0109.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1560027 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0110.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1561094 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0111.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1562330 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0112.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1563412 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0113.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1564725 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0114.png' for reading
+[file @ 000001d844cf1c00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1565289 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0115.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1566781 bytes read, 0 seeks
+frame=   65 fps= 12 q=25.6 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=1.72x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0116.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1567413 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0117.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1568557 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0118.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1569276 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0119.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1570433 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0120.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1568417 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0121.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1572889 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0122.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1575074 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0123.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1576092 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0124.png' for reading
+[file @ 000001d844cf1b40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1577726 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0125.png' for reading
+[file @ 000001d844cf1c00] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1578471 bytes read, 0 seeks
+frame=   75 fps= 13 q=25.5 size=       0kB time=00:00:09.00 bitrate=   0.0kbits/s speed=1.51x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0126.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1580594 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0127.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1580867 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0128.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1582607 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0129.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1583905 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0130.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1585461 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0131.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1586194 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0132.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1587810 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0133.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1588874 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0134.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1590058 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0135.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1591405 bytes read, 0 seeks
+frame=   85 fps= 13 q=25.6 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=1.36x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0136.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1592056 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0137.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1593516 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0138.png' for reading
+[file @ 000001d844cf2280] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1594358 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0139.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1595739 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0140.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1597063 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0141.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1598028 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0142.png' for reading
+[file @ 000001d844cf21c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1599019 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0143.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1600190 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0144.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1601117 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0145.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1602368 bytes read, 0 seeks
+frame=   95 fps= 13 q=25.6 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=1.22x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0146.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1603693 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0147.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1604591 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0148.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1605679 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0149.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1607036 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0150.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1608761 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0151.png' for reading
+[file @ 000001d844cf21c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1609473 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0152.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1610673 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0153.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1611454 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0154.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1612451 bytes read, 0 seeks
+frame=  104 fps= 13 q=25.6 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=1.12x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0155.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1614000 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0156.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1615284 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0157.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1616045 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0158.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1617073 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0159.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1618389 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0160.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1619284 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0161.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1620324 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0162.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1621865 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0163.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1623025 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0164.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1623957 bytes read, 0 seeks
+frame=  114 fps= 13 q=25.3 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=1.03x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0165.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1625281 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0166.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1626693 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0167.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1627883 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0168.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1629046 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0169.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1629779 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0170.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1631310 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0171.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1632517 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0172.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1633468 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0173.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1634670 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0174.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1635828 bytes read, 0 seeks
+frame=  123 fps= 13 q=25.4 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.972x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0175.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1637149 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0176.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1638480 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0177.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1639493 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0178.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1640514 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0179.png' for reading
+[file @ 000001d844cf1f40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1641561 bytes read, 0 seeks
+frame=  129 fps= 13 q=25.5 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.912x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0180.png' for reading
+[file @ 000001d844cf2680] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1643711 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0181.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1644579 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0182.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1645750 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0183.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1646748 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0184.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1647932 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0185.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1649318 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0186.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1650446 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0187.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1651427 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0188.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1652656 bytes read, 0 seeks
+frame=  137 fps= 13 q=32.9 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.868x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0189.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1654190 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0190.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1655226 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0191.png' for reading
+[file @ 000001d844cf1b40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1656649 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0192.png' for reading
+[file @ 000001d844cf2280] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1657909 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0193.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1658912 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0194.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1660370 bytes read, 0 seeks
+frame=  144 fps= 13 q=25.5 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.82x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0195.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1661673 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0196.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1662681 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0197.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1664117 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0198.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1665440 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0199.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1666648 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0200.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1668225 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0201.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1669355 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0202.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1670941 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0203.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1671855 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0204.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1673281 bytes read, 0 seeks
+frame=  154 fps= 13 q=25.5 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.769x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0205.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1674844 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0206.png' for reading
+[file @ 000001d844cf1f40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1676602 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0207.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1677535 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0208.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1678864 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0209.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1680470 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0210.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1682511 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0211.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bec0] Statistics: 1683694 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0212.png' for reading
+[file @ 000001d844cf1b40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1685125 bytes read, 0 seeks
+frame=  162 fps= 13 q=32.9 size=     256kB time=00:00:09.00 bitrate= 233.1kbits/s speed=0.737x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0213.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1686923 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0214.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1688739 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0215.png' for reading
+[file @ 000001d844cf2000] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1690094 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0216.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1691646 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0217.png' for reading
+[file @ 000001d844cf2280] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1693003 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0218.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1694288 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0219.png' for reading
+[file @ 000001d844cf1e80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1696067 bytes read, 0 seeks
+frame=  169 fps= 13 q=25.5 size=     512kB time=00:00:09.00 bitrate= 466.1kbits/s speed=0.697x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0220.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1698411 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0221.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1699103 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0222.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c9c0] Statistics: 1701006 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0223.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1702136 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0224.png' for reading
+[file @ 000001d844cf2100] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1704617 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0225.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3cb40] Statistics: 1706856 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0226.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1707324 bytes read, 0 seeks
+frame=  176 fps= 13 q=32.9 size=     512kB time=00:00:09.00 bitrate= 466.1kbits/s speed=0.671x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0227.png' for reading
+[file @ 000001d844cf2680] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c180] Statistics: 1709226 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0228.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1711975 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0229.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1713333 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0230.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1714490 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0231.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1716972 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0232.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c700] Statistics: 1719427 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0233.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c880] Statistics: 1720595 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0234.png' for reading
+[file @ 000001d844cf25c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1721641 bytes read, 0 seeks
+frame=  184 fps= 13 q=25.5 size=     512kB time=00:00:09.00 bitrate= 466.1kbits/s speed=0.638x    [image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0235.png' for reading
+[file @ 000001d844cf2280] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c440] Statistics: 1724501 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0236.png' for reading
+[file @ 000001d844cf1f40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c5c0] Statistics: 1726882 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0237.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1729490 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0238.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c040] Statistics: 1728646 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0239.png' for reading
+[file @ 000001d844cf1cc0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3c300] Statistics: 1732207 bytes read, 0 seeks
+[image2 @ 000001d83f8cf340] Opening 'output3/morphed_image_0240.png' for reading
+[file @ 000001d844cf1a80] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 000001d844e3bd80] Statistics: 1734034 bytes read, 0 seeks
+[in#0/image2 @ 000001d83f8cf200] EOF while reading input
+[in#0/image2 @ 000001d83f8cf200] Terminating demuxer thread
+frame=  193 fps= 13 q=25.6 size=     512kB time=00:00:09.00 bitrate= 466.1kbits/s speed=0.608x    [vist#0:0/png @ 000001d83f8de940] Decoder thread received EOF packet
+[vist#0:0/png @ 000001d83f8de940] Decoder returned EOF, finishing
+[vist#0:0/png @ 000001d83f8de940] Terminating decoder thread
+frame=  207 fps= 13 q=33.0 size=     512kB time=00:00:09.00 bitrate= 466.1kbits/s speed=0.577x    [out_0_0 @ 000001d83f92fa00] EOF on sink link out_0_0:default.
+[sist#2:0/subrip @ 000001d83f9064c0] Decoder thread received EOF packet
+[sist#2:0/subrip @ 000001d83f9064c0] Decoder returned EOF, finishing
+[sist#2:0/subrip @ 000001d83f9064c0] Terminating decoder thread
+[mp3 @ 000001d83f8f0840] demuxer injecting skip 0 / discard 47
+[in#1/mp3 @ 000001d83f8f0000] EOF while reading input
+[in#1/mp3 @ 000001d83f8f0000] Terminating demuxer thread
+No more output streams to write to, finishing.
+[out#0/mp4 @ 000001d83f906b40] All streams finished
+[out#0/mp4 @ 000001d83f906b40] Terminating muxer thread
+[AVIOContext @ 000001d83f931940] Statistics: 796073 bytes written, 2 seeks, 6 writeouts
+[out#0/mp4 @ 000001d83f906b40] Output file #0 (output3/video_audio_srt.mp4):
+[out#0/mp4 @ 000001d83f906b40]   Output stream #0:0 (video): 241 frames encoded; 241 packets muxed (722051 bytes); 
+[out#0/mp4 @ 000001d83f906b40]   Output stream #0:1 (audio): 651 packets muxed (62496 bytes); 
+[out#0/mp4 @ 000001d83f906b40]   Output stream #0:2 (subtitle): 2 frames encoded; 2 packets muxed (204 bytes); 
+[out#0/mp4 @ 000001d83f906b40]   Total: 894 packets (784751 bytes) muxed
+[out#0/mp4 @ 000001d83f906b40] video:705kB audio:61kB subtitle:0kB other streams:0kB global headers:2kB muxing overhead: 1.442241%
+frame=  241 fps= 13 q=29.3 Lsize=     777kB time=00:00:15.55 bitrate= 409.4kbits/s speed=0.867x    
+[in#0/image2 @ 000001d83f8cf200] Input file #0 (output3/morphed_image_%04d.png):
+[in#0/image2 @ 000001d83f8cf200]   Input stream #0:0 (video): 241 packets read (381321403 bytes); 241 frames decoded; 0 decode errors; 
+[in#0/image2 @ 000001d83f8cf200]   Total: 241 packets (381321403 bytes) demuxed
+[in#1/mp3 @ 000001d83f8f0000] Input file #1 (output3/merged_audio.mp3):
+[in#1/mp3 @ 000001d83f8f0000]   Input stream #1:0 (audio): 651 packets read (62496 bytes); 
+[in#1/mp3 @ 000001d83f8f0000]   Total: 651 packets (62496 bytes) demuxed
+[AVIOContext @ 000001d83f8f0e00] Statistics: 62733 bytes read, 0 seeks
+[in#2/srt @ 000001d83f8e7d40] Input file #2 (output3/subtitles.srt):
+[in#2/srt @ 000001d83f8e7d40]   Input stream #2:0 (subtitle): 2 packets read (200 bytes); 2 frames decoded; 0 decode errors; 
+[in#2/srt @ 000001d83f8e7d40]   Total: 2 packets (200 bytes) demuxed
+[AVIOContext @ 000001d83f8db900] Statistics: 276 bytes read, 0 seeks
